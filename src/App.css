@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Wet+Paint&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.header {
+  width: 100%;
+  height: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: #f5f5f5c2;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  z-index: 1000; 
+}
+
+
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+}
+
+nav .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+nav .logo img{
+    width: 30%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+nav .logo h2{
+    color:#B8001F;
+    font-family: "Rubik Wet Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+nav ul{
+    display: flex;
+    gap: 35px;
+}
+
+nav ul li{
+    list-style: none;
+    font-size: 21px;
+    font-family: "Popins", sans-serif;
+    font-weight: 600;
+    color: #1E2A5E;
+    cursor: pointer;
+    position: relative;
+    transition:color 1s ease ;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul li:hover{
+    color: #032327;
+}
+
+nav ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position the underline slightly below the text */
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #B8001F;
+    transform: scaleX(0); /* Start with no width */
+    transform-origin: left; /* Start animation from the left */
+    transition: transform 0.3s ease;
+}
+nav ul li:hover::after {
+    transform: scaleX(1); /* Expand the underline */
+}
+
+/* --------------------------------------------Content----------------------------------- */
+
+.content{
+  padding-top: 80px;
+    width: 100%;
+    height:auto;
+    background-color: #d1d1d187;
+}
+
+.content-image img{
+    width: 100%;
+    height: 400px;
+    /* object-fit: contain; */
+    mix-blend-mode: color-burn;
+}
+
+.gallery{
+    margin-top: 30px;
+    text-align: center;
+    padding: 30px;
+}
+.heading h1{
+        font-family: "Popins" sans-serif;
+        font-weight: 800;
+        font-size: 40px;
+        color: #B8001F;
+        text-align: center;
+}
+
+/* From Uiverse.io by SteveBloX */ 
+.card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-top: 20px;
+    padding: 20px;
+}
+.card {
+    box-sizing: border-box;
+    width: 270px;
+    height: 354px;
+    margin: 20px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+  }
+
+  .card img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+  }
+  
+  .card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+  
+  .card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+
+
+
+.about-content{
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+
+.about-content .card {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    border-radius: 14px;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    ;
+  }
+  
+    .bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 190px;
+    height: 240px;
+    z-index: 2;
+    background: linear-gradient(135deg, #0d1120 0%, #3a4b8a 43%, #0d1120 100%);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid white;
+  }
+   
+  .blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+  }
+  
+  @keyframes blob-bounce {
+    0% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  
+    25% {
+      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+  
+    50% {
+      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+  
+    75% {
+      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+  
+    100% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  }
+  
+.anjali-content{
+    font-size: 20px;
+  color: #bec4cf;
+  background: linear-gradient(135deg, #0d1120 0%, #3a4b8a 43%, #0d1120 100%);
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+  height: 245px;
+  width: 1000px;
+  cursor: pointer;
+  font-family: "Popins" sans-serif;
+}
+
+
+
+/* Order */
+
+.order{
+  margin: 10px 0px 10px 0px;
+  padding: 10px 80px;
+  align-items: center;
+  background-color: #e3e6f3;
+  width: 100%;
+  height: 70vh;
+}
+
+.order .order-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.order h1{
+        font-family: "Popins" sans-serif;
+        font-weight: 800;
+        font-size: 40px;
+        color: #B8001F;
+        text-align: center;
+}
+
+.order .order-box{
+  width: 30%;
+  min-width: 250px;
+  height: 65vh;
+  padding: 10px 12px;
+  /* border: 2px solid; */
+  /* border-radius: 25px; */
+  cursor: pointer;
+  margin: 30px 0px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  transition: 0.2s ease; */
+  position: relative;
+}
+
+
+.order .order-box h2{
+  font-family: fangsong;
+  font-weight: 600;
+
+}
+.order .order-box p{
+  padding-top: 5px;
+  font-size: 18px;
+  font-weight:600;
+}
+
+
+.order .s-box{
+  border: 4px solid;
+  height: 38vh;
+  width: 70%;
+  background-color: white;
+  margin-left: 50px;
+  box-shadow: 27px 20px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+/* .order .s-box:hover{
+  transition: all 1s;
+  -webkit-transform: rotateZ(1 0deg);
+  -ms-transform: rotateZ(10deg);
+  transform: rotateZ(10deg);
+} */
+
+.order .s-box img{
+  width: 100%;
+  height: 35vh;
+  padding: 5px;
+}
+.order .s-box button {
+  border-radius: 7px;
+  border: 2px solid transparent;
+  background-color: #608BC1;
+  text-shadow: 1px 1px 1px #00000040;
+  /* box-shadow: 8px 8px 20px 0px #45090059; */
+  padding: 10px 40px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.order .s-box button a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.order .s-box button:hover {
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#payment-review{
+  margin-left: 40px;
+  margin-top: 5px;
+  justify-content: center; 
+  align-items: center; 
+  height: auto; 
+  text-align: center; 
+  padding: 10px 80px;
+  cursor: pointer;
+}
+
+#payment-review h1{
+        font-family: "Popins" sans-serif;
+        font-weight: 800;
+        font-size: 40px;
+        color: #B8001F;
+        text-align: center;
+}
+
+
+#payment-review p{
+  text-align: start;
+  align-items: start;
+  justify-content: start;
+  font-weight: 500;
+  font-family: "Popins" sans-serif;
+  font-size: 18px;
+  color: black;
+  line-height: 30px;
+}
+
+
+/* Contact - enquiry */
+
+.footer{
+  padding: 10px;
+  width: 100%;
+    height: auto;
+    /* border: 1px solid red; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: #f5f5f5c2;
+    
+    
+}
+
+.footer .footer-content{
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.footer .footer-content .box{
+        width: 500px;
+        height: 200px;
+        border: 1.5px solid rgb(0, 2, 3);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+  .box iframe{
+    width: 100%;
+    height: 100%;
+  }
+
+  .box .logo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    place-items: center;
+    padding: 20px 20px 0px 20px;
+  }
+
+  .box .logo h3{
+    color:#B8001F;
+    font-family: "Rubik Wet Paint", system-ui;
+    font-size: 28px;
+    font-style: normal;
+  }
+
+  .box .location, .phone, .email{
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    place-items: center;
+    margin-left: 30px;
+    margin-top: 10px;
+    gap: 10px;
+    font-family: "Popins" sans-serif;
+    font-size: 18px;
+  }
+
+  
+  .box .location img{
+    width: 5%;
+    height: 25%;
+  }
+  .box .email img{
+    width: 5%;
+    height: 30%;
+  }
+  .box .phone img{
+    width: 5%;
+    height: 30%;
+  }
+
+
+  /* From Uiverse.io by Yaya12085 */ 
+.form {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+}
+
+.form .title {
+  color: royalblue;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input {
+  outline: 0;
+  border: 1px solid rgb(219, 213, 213);
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+}
+
+.form textarea {
+  border-radius: 8px;
+  height: 60px;
+  width: 100%;
+  resize: none;
+  outline: 0;
+  padding: 8px 14px;
+  border: 1px solid rgb(219, 213, 213);
+}
+
+.form button {
+  align-self: flex-end;
+  padding: 8px;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: royalblue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.copyright {
+  font-family: "Poppins", sans-serif; /* Font family */
+  color: #1E2A5E; /* Text color */
+  font-size: 14px; /* Font size */
+  margin: 20px;
+  text-align: center;
+}
+    
+/* Small devices (phones, less than 768px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  *{
+    max-width: 70vh;
+  }
+  .header{
+    position: relative;
+  }
+  nav {
+    align-items: center;
+    justify-content: center;
+      flex-direction: row; /* Stack nav items vertically */
+      padding: 10px; /* Adjust padding */
+  }
+
+  nav ul {
+      display: none;
+  }
+
+
+  .content {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .content-image img{
+    width: 100%;
+    height: 120px;
+  }
+  .about-content{
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .anjali-content{
+    overflow:scroll;
+  }
+  .anjali-content p {
+    margin: 10px;
+  }
+  .order{
+    height: auto;
+    width: 100%;
+  }
+
+  .order .order-box{
+    height: 55vh;
+  }
+  .order-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .order-box .s-box{
+    width: 100%;
+    margin-left: 0px;
+  }
+  #payment-review{
+    padding: 5px;
+    height: auto;
+  }
+  #payment-review h1{
+    margin: 15px;
+  }
+  .footer .footer-content{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer .footer-content .box{
+      width: 100%;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  nav {
+      padding: 20px; /* Adjust padding */
+  }
+
+  nav ul {
+      gap: 25px; /* Moderate gap between items */
+  }
+
+  .card {
+      width: 45%; /* Two cards per row */
+  }
+
+  .about-content .card {
+      width: 80%; /* Adjust card width */
+  }
+
+  .order .order-box {
+      width: 45%; /* Adjust order box width */
+  }
+}
+
+/* Large devices (desktops, 1025px and up) */
